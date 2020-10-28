@@ -4,8 +4,8 @@ This is a simple power supply unit for Raspberry Pi usage in cars. It is made of
 * steps down 12V to 5.15V suitable for the Arduino Nano and Raspberry Pi
 * steps the ignition signal down to 3.3V suitable for the input on the Arduino Nano
 * outputs a triggered 5.15V source for powering the Raspberry Pi
-** the source is turned on when the ignition gets turned on
-** the source stays on for some time even when the ignition turns off to debounce quick changes
+* the source is turned on when the ignition gets turned on
+* the source stays on for some time even when the ignition turns off to debounce quick changes
 * before cutting power to the Raspberry completely off the Arduino grounds an output so the Raspberry Pi can shutdown correctly before losing power
 
 # Parts 
@@ -17,6 +17,7 @@ This is a simple power supply unit for Raspberry Pi usage in cars. It is made of
 * some connectors and a perf board
 
 # TODOs
+* pictures
 * add some circuit drawings and integrations with the Raspberry
 * add Raspberry shutdown script
 * add reverse polarity protection through some diodes
