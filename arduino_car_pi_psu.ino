@@ -1,18 +1,17 @@
 // TODO the arduino itself should propably be powered by accessory power. it then can "sense" the ignition and control our raspberry, but be off when the car is off completely
 
-const int ignitionInPin = A0;
-const int rpiPowerSwitchOut = 7;
-const int rpiShutdownSignalOut = 6;
-const int ignitionInputThreshold = 600;
-const int delayMs = 200;
+const int ignitionInPin = 11;
+const int rpiPowerSwitchOut = A5;
+const int rpiShutdownSignalOut = 12;
+const int delayMs = 1000;
 const int delayBeforeRpiPowerCutOff = 15;
 const int delayBeforeRpiShutdownSignalStart = 5;
 const int delayBeforeRpiShutdownSignalEnd = 7;
 
 const int rpiPowerSwitchOnStatusLed = 2;
 const int rpiPowerSwitchOnStatusLedGround = 3;
-const int ignitionStatusLed = 12;
-const int ignitionStatusLedGround = 13;
+const int ignitionStatusLed = 6;
+const int ignitionStatusLedGround = 7;
 const int shutdownSignalStatusLed = 4;
 const int shutdownSignalStatusLedGround = 5;
 
@@ -62,7 +61,7 @@ void updateIgnitionTimers() {
 }
 
 bool isIgnitionOn() {
-  return analogRead(ignitionInPin) > ignitionInputThreshold;
+  return digitalRead(ignitionInPin) == HIGH;
 }
 
 bool isRpiShutdownSignalOn() {
